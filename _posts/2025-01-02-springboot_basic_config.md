@@ -88,7 +88,7 @@ Maven Central Repository에서 검색해서 찾자
 <details>
 <summary>MoaMoa에서 사용한 application.yml</summary>
 
-``` yaml
+<pre><code>
 spring:
   profiles:
     include:
@@ -124,7 +124,7 @@ spring:
     hibernate:
       ddl-auto: create-drop # 매 실행시 db create & 서버 종료시 db drop
     show-sql: true
-```
+</code></pre>
 </details>
 
 ### Reference
