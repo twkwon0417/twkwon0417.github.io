@@ -1,5 +1,5 @@
 ---
-title: Introduction to SQL 
+title: Introduction to SQL (파기) 
 date: 2025-03-16 22:10:10 +9000
 categories: [Konkuk_3-1, Database]
 tags: [sql]     # TAG names should always be lowercase
