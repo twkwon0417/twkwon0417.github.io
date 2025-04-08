@@ -25,6 +25,14 @@ if v1 depends on it self its called recursive
     - query를 따로 저장하는 느낌
     - view를 불러오면 query가 실행됨
 
+View Expansion
+--
+![view-expansion.png](../assets/Konkuk_3-1/Database/view-expansion.png)
+- View에서 View를 참조 할때 참조된 view를 가져다 쓰는게 아닌 query로 변환해서 nested view를 실행하는 것
+- Database will recursively replace the view references until only base tables remain
+  - Self참조가 있지 않는 이상 무조건 끝나게(성공적 실행) 되여 있다. 
+- 왜쓰니: To ensures the query is executed correctly and efficiently.
+
 Materialized Views
 --
 - view but result(data) will be stored physically
