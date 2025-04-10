@@ -1,5 +1,5 @@
 ---
-title: Normalization Basic
+title: Good Design of Database
 date: 2025-04-08 17:54:10 +9000
 categories: [Konkuk_3-1, Database]
 tags: [normalization, 1nf, 3nf, functional, dependency]     # TAG names should always be lowercase
