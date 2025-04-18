@@ -37,6 +37,7 @@ create table section
 Referential Integrity
 --
 특정 relation의 특정 attribute가 다른 relation에도 존재하게 제한을 둘 수 있다. 
+
 ```sql
 -- Department table: Each department is uniquely identified by dept_name.
 CREATE TABLE Department (
@@ -57,12 +58,14 @@ CREATE TABLE Instructor (
     -- FOREIGN KEY (dept_name) REFERENCES Department // 이렇게도 알아먹는다. 
 );
 ```
+
 - Referential integrity constraint를 위반하면 dbms가 reject함
 - 맨날 이러면 수정, 삭제하기 짜증 e.g. 위의 경우 dept_name을 수정하려면 두 table모두에서 작업이 이루어 져야한다.
 - Delete과 Update의 경우 다음과 같은 문법 제공
   - **Cascade**: 다 전파시켜
   - **Set null**: null로
   - **Set default**: 기본값으로(기본값은 우리가 설정)
+
 ```sql
 -- Create the Parent table with a primary key.
 CREATE TABLE Parent (
@@ -86,6 +89,7 @@ CREATE TABLE Child (
 Assertions
 --
 내가 아는 그 assertion 맞습니당.
+
 ```sql
 CREATE ASSERTION positive_balance_assertion
 CHECK (
@@ -96,6 +100,7 @@ CHECK (
     )
 );
 ```
+
 - CREATE ASSERTION <assertion-name> CHECK (<predicate>)
 - Database 전제에 적용
 - Operation이 발생 할때마다 Assertion이 실행되서 만족하지 않을시 바로 reject
@@ -174,6 +179,7 @@ Granting, Revoking authorization
 --
 - GRANT <privilege list> ON <relation or view> TO <user list>
 - REVOKE <privilege list> ON <relation or view> FROM <user list> 
+
 ```sql
 -- Example: Granting specific privileges on a table named "Employees" to a list of users.
 GRANT SELECT, INSERT, UPDATE
@@ -185,6 +191,7 @@ REVOKE INSERT, UPDATE
 ON Employees
 FROM user2;
 ```
+
 - revoke에 <user list>에 **public**이 있으면 따로(explicitly) 그 privilege를 부여받은 사람 제외 모두가 권한을 잃어
 - A, B, C 셋 에게 privilege를 grant 받은 경우 A, B, C모두에게 revoke 당해야, privilege가 revoke 됨 (이런 상황 해결 => role사용하면 이럴일 없음)
 - A가 admin한테 권한을 받고, A가 B한테 권한을 주고, B가 C에게 권한을 준 상황을 가정하자. 만약 A가 admin에게 권한을 revoke 당하면 B, C도 권한을 revoke 당한다. (chain of privilege(?))
@@ -192,6 +199,7 @@ FROM user2;
 Roles
 --
 Main 기능: Authorization을 그룹화해서 권한, 유저들을 관리하게 쉽게 하자 
+
 ```sql
 CREATE ROLE Manager;
 GRANT SELECT, INSERT, UPDATE ON Employee TO Manager;
@@ -199,6 +207,7 @@ GRANT Manager TO alice;
 REVOKE Manager FROM alice;
 REVOKE SELECT, INSERT, UPDATE ON Employee FROM Manager;
 ```
+
 - create role <name>
 - grant <privilege list> on <table> to <role>
 - grant <role> to <users>
