@@ -21,8 +21,7 @@ Constraints on a Single Relation
 - **check(P), where P is a predicate**: Predicate P must be satisfied by every tuple in relation
   - Predicate안에 sub query 있어도 O.K.
 ```sql
-create table section (
-  create table section
+create table section
     (course_id varchar (8),
     sec_id varchar (8),
     semester varchar (6),
@@ -31,7 +30,7 @@ create table section (
     room_number varchar (7),
     id varchar (4),
     primary key (course_id, sec_id, semester, year),
-    check (semester in ('Fall', 'Winter', 'Spring', 'Summer')))
+    check (semester in ('Fall', 'Winter', 'Spring', 'Summer'))
 )
 ```
 
