@@ -95,4 +95,4 @@ jobs:
             docker rmi ${{ secrets.DOCKER_REPO }}
             # 새로운 이미지 풀 및 실행
             docker pull ${{ secrets.DOCKER_REPO }}
-            docker run --name my_blog --network mynet -d -p 8080:80 ${{ secrets.DOCKER_REPO }}
+            docker run --name my_blog --network mynet -d -p 9000:80 ${{ secrets.DOCKER_REPO }}
