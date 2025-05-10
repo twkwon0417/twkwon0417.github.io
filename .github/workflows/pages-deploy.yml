@@ -84,7 +84,7 @@ jobs:
         with:
           host: ${{ secrets.HOST }}
           username: tony
-          port: 1205
+          port: 1203
           key: ${{ secrets.KEY }}
           envs: GITHUB_SHA
           script: |
