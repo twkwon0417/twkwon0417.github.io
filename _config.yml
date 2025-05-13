@@ -16,10 +16,10 @@ timezone: Asia/Seoul
 
 title: Tony Kwon # the main title
 
-tagline: 나의 모든 것 # it will display as the subtitle
+tagline: Infrajoa, Serverjoa, Coffeejoa # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
-  A minimal, responsive and feature-rich Jekyll theme for technical writing.
+  Infra, Server, Coding 배운것들 정리하기
 
 # Fill in the protocol & hostname for your site.
 # E.g. 'https://username.github.io', note that it does not end with a '/'.
