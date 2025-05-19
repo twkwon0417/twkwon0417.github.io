@@ -46,7 +46,7 @@ social:
 
 # Site Verification Settings
 webmaster_verifications:
-  google: P0-lmKdnS1I49oZ6g7NN8qLD3NQsJpk0yY0BRjbKffw
+  google: Us3wDcP_-2oMZ2bbDW6bQ-FgzKVwX_83se-W4C_1sJY
   bing: # fill in your Bing verification code
   alexa: # fill in your Alexa verification code
   yandex: # fill in your Yandex verification code
@@ -98,7 +98,7 @@ theme_mode: # [light | dark]
 cdn:
 
 # the avatar on sidebar, support local or CORS resources
-avatar: assets/Model.JPG
+avatar: assets/tony_ocean.jpeg
 
 # The URL of the site-wide social preview image used in SEO `og:image` meta tag.
 # It can be overridden by a customized `page.image` in front matter.
