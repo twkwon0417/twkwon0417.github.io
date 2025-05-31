@@ -38,7 +38,7 @@ Dynamic Hashing
 
 ### Extendible Hashing
 
-![extendible-hashing.png](..%2Fassets%2FKonkuk_3-1%2FDatabase%2FPost_14%2Fextendible-hashing.png)
+![extendible-hashing.png](../assets/Konkuk_3-1/Database/Post_14/extendible-hashing.png)
 
 - Hash key의 Postfix나 Prefix를 바탕으로 indirection level(directory) 같은게 만들어진다.
 - 여러 directory entries들이 single bucket을 가리킬수 있다
@@ -47,7 +47,7 @@ Dynamic Hashing
 - G == L 이면 Directory를 doubling
 - 아래 사진 틀렸는데 여튼 저런 느낌이다. 이걸 언제 새로 그리냐
 
-![extendible-hashing-fucked.png](..%2Fassets%2FKonkuk_3-1%2FDatabase%2FPost_14%2Fextendible-hashing-fucked.png)
+![extendible-hashing-fucked.png](../assets/Konkuk_3-1/Database/Post_14/extendible-hashing-fucked.png)
 
 #### 장점
 - 파일이 커져도 hash performance가 줄어들지 않아
@@ -62,8 +62,8 @@ Dynamic Hashing
 - Bucket에 overflow가 발생하면 **Next Pointer**가 가리키고 있는 bucket이 split 된다. 
 - Use family of hash functions
 
-![linear-hashing-1.png](..%2Fassets%2FKonkuk_3-1%2FDatabase%2FPost_14%2Flinear-hashing-1.png)
-![linear-hashing-2.png](..%2Fassets%2FKonkuk_3-1%2FDatabase%2FPost_14%2Flinear-hashing-2.png)
+![linear-hashing-1.png](../assets/Konkuk_3-1/Database/Post_14/linear-hashing-1.png)
+![linear-hashing-2.png](../assets/Konkuk_3-1/Database/Post_14/linear-hashing-2.png)
 
 > - Next 전에 있는 bucket들 -> 이미 split이 된 bucket, see buckets on blue colored side
 > - Next 혹은 뒤에 있는 애들 -> bucket split 될 애들
@@ -99,6 +99,6 @@ Why Introduced
 조건 & 예시
 --
 
-![bitmap-indexing.jpeg](..%2Fassets%2FKonkuk_3-1%2FDatabase%2FPost_14%2Fbitmap-indexing.jpeg)
+![bitmap-indexing.jpeg](../assets/Konkuk_3-1/Database/Post_14/bitmap-indexing.jpeg)
 
 - 구분할수 있는 몇개 안되는 domain을 가지고 있는 attribute에 적용가능
