@@ -1,6 +1,6 @@
 ---
 title: B+ tree
-date: 2025-05-26 20:25:03 +9000
+date: 2025-05-29 20:25:03 +9000
 categories: [Konkuk_3-1, Database]
 tags: [bptree, btree, indexing]     # TAG names should always be lowercase
 ---
