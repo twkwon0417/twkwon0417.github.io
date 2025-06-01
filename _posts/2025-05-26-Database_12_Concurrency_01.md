@@ -1,5 +1,5 @@
 ---
-title: Concurrency
+title: Concurrency 1
 date: 2025-06-01 14:07:12 +9000
 categories: [Konkuk_3-1, Database]
 tags: [concurrency, serializability, phantom, transaction, locking, tree]     # TAG names should always be lowercase
@@ -28,7 +28,7 @@ Transaction을 두번 실행하는데, data has been **modified** by another tra
 
 ### Phantom Read
 Transaction을 두번 실행하는데, result set has new records due to another recently-committed transaction.
-![phantom-read.png](..%2Fassets%2FKonkuk_3-1%2FDatabase%2FPost_12%2Fphantom-read.png)
+![phantom-read.png](../assets/Konkuk_3-1/Database/Post_12/phantom-read.png)
 
 ### Serialization Anomaly
 Result of successfully committing a group of transaction 했는데, 말이 안되는 값이 나와 (Inconsistent 해)
@@ -36,7 +36,7 @@ Result of successfully committing a group of transaction 했는데, 말이 안�
 Transaction Isolation
 ==
 
-![transaction-isolation-level.png](..%2Fassets%2FKonkuk_3-1%2FDatabase%2FPost_12%2Ftransaction-isolation-level.png)
+![transaction-isolation-level.png](../assets/Konkuk_3-1/Database/Post_12/transaction-isolation-level.png)
 SQL-92의 Transaction Isolation Level
 
 Implementation Of Isolation Levels
@@ -53,19 +53,19 @@ Implementation Of Isolation Levels
 > - **Exclusive(X) mode**: Data 읽기, 쓰기 모두 지원, 한번에 하나의 transaction만 lock을 잡을 수 있다.   
 > - **Shared(S) mode**: Data 읽기만 지원, 여러 transaction이 동시 접근 가 
 
-![lock-compatability-matrix.jpeg](..%2Fassets%2FKonkuk_3-1%2FDatabase%2FPost_12%2Flock-compatability-matrix.jpeg)
+![lock-compatability-matrix.jpeg](../assets/Konkuk_3-1/Database/Post_12/lock-compatability-matrix.jpeg)
 - X-lock은 아무도 특정 resource에 대해 lock을 hold하지 않았을 때만 가능
 - 특정 resource에 X-lock이 걸려 있으면 다른 X-lock, S-lock이 lock을 걸수 없어
 
 예시
-![lock-example-1.jpeg](..%2Fassets%2FKonkuk_3-1%2FDatabase%2FPost_12%2Flock-example-1.jpeg)
+![lock-example-1.jpeg](../assets/Konkuk_3-1/Database/Post_12/lock-example-1.jpeg)
 
-![lock-example-2.png](..%2Fassets%2FKonkuk_3-1%2FDatabase%2FPost_12%2Flock-example-2.png)
+![lock-example-2.png](../assets/Konkuk_3-1/Database/Post_12/lock-example-2.png)
 얘도 역시 serializable 하지 않는다. 동일 A에 대해 write연산이 하나 이상 있기 때문에
 
 #### Deadlock & Starvation
 
-![deadlock.png](..%2Fassets%2FKonkuk_3-1%2FDatabase%2FPost_12%2Fdeadlock.png)
+![deadlock.png](../assets/Konkuk_3-1/Database/Post_12/deadlock.png)
 
 T<sub>4</sub>는 T<sub>3</sub>가 끝나기를 기다리고 있고 T<sub>3</sub>는 T<sub>4</sub>가 끝나기를 기다리고 있어
 <br> 서로가 서로를 기다리고 있어 무한 block되는 **deadlock**
@@ -75,7 +75,7 @@ T<sub>4</sub>는 T<sub>3</sub>가 끝나기를 기다리고 있고 T<sub>3</sub>
 #### Lock Manager가 Lock을 관리하는 법
 
 In memory data structure **Lock Table**로 관리한다. 
-![lock-table.jpeg](..%2Fassets%2FKonkuk_3-1%2FDatabase%2FPost_12%2Flock-table.jpeg)
+![lock-table.jpeg](../assets/Konkuk_3-1/Database/Post_12/lock-table.jpeg)
 
 ### Timestamps
 시간 정보를 자기도 연산들의 실행 순서를 매길게
@@ -98,7 +98,7 @@ Two Phase Locking Protocol
 - Recoverability 보장
 - **Deadlock free를 보장하는 건 아니야**
 
-![2pl.jpeg](..%2Fassets%2FKonkuk_3-1%2FDatabase%2FPost_12%2F2pl.jpeg)
+![2pl.jpeg](../assets/Konkuk_3-1/Database/Post_12/2pl.jpeg)
 
 - **Phase 1**
   - Transaction may obtain locks
@@ -125,7 +125,7 @@ Graph based protocols alternative to two phase locking
 
 ### Tree Based Protocols
 
-![tree-protocol.png](..%2Fassets%2FKonkuk_3-1%2FDatabase%2FPost_12%2Ftree-protocol.png)
+![tree-protocol.png](../assets/Konkuk_3-1/Database/Post_12/tree-protocol.png)
 
 Tree protocol is simple kind of graph protocol
 - **Only exclusive locks** are allowed.
