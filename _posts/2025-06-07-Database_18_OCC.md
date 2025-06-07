@@ -1,8 +1,8 @@
 ---
 title: Concurrency 4 (Optimistic Concurrency Control)
-date: 2025-06-03 17:32:00 +9000
+date: 2025-06-07 19:21:50 +9000
 categories: [Konkuk_3-1, Database]
-tags: [concurrency, optimistic, occ, validation, locking, tree]     # TAG names should always be lowercase
+tags: [concurrency, optimistic, occ, validation]     # TAG names should always be lowercase
 ---
 
 Validation-Based Protocol
