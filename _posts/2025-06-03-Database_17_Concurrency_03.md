@@ -1,5 +1,5 @@
 ---
-title: Concurrency 4
+title: Concurrency 3
 date: 2025-06-03 17:32:00 +9000
 categories: [Konkuk_3-1, Database]
 tags: [concurrency, serializability, timestamp, transaction, locking, tree]     # TAG names should always be lowercase
