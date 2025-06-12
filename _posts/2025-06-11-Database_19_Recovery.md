@@ -1,5 +1,5 @@
 ---
-title: Concurrency 4 (Optimistic Concurrency Control)
+title: Recovery
 date: 2025-06-11 20:33:19 +9000
 categories: [Konkuk_3-1, Database]
 tags: [recovery, storage, failure, log]     # TAG names should always be lowercase
