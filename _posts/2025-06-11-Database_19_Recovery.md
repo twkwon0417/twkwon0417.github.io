@@ -157,3 +157,34 @@ Fail하고 recovering하는 상황일때
 - T<sub>i</sub>가 **redone** 돼야 하는 경우 
   - Contains <T<sub>i</sub> start>
   - and <T<sub>i</sub> commit> or <T<sub>i</sub> abort> (**Commit 된후**에 failure 잖아 이 상태면)
+
+예시
+![recovery-eg.jpeg](../assets/Konkuk_3-1/Database/Post_19/recovery-eg.jpeg)
+
+왜 이미 abort되어 되돌렸던 트랜잭션도 다시 redo해 (a.k.a Repeating History)?
+- 시간 낭비처럼 보일수도 있는데
+- 단순하고 오류 가능성이 낮어!
+
+### Checkpoints
+
+Log 한 무더기 인데 이걸 전부 다 다시할수 없잖아... Checkpoint를 만들자 <br>
+> Checkpoint 만들기
+> 1. 일단 지금 가지고 있는 모든 data들 다 stable storage로 옮기자
+> 2. <**checkpoint** L> log를 stable storage에 찍어
+> 3. Checkpointing 할때는 어떤 update도 진행되면 안돼
+
+- Recovery 할때 가장 최근 checkpoint 뒤에 있는건 무시해도 돼
+- Some earlier part of the log may be needed for undo operations
+  - Checkpoint 쓴다고 해도 log들 삭제하지 마!
+> 트랜잭션 T3 가 체크포인트 전에 시작되어,<br>
+> 체크포인트 이후에 abort 되었거나 커밋 못 한 채 장애가 났다면,<br>
+> T3 가 덮어쓴 필드들의 원래 값을 담은 로그 레코드는 체크포인트 바로 다음에 있지 않고,<br>
+> “T3 start” 이전, 즉 체크포인트 이전 로그 어딘가에 분산되어 있을 수 있다.
+
+예시
+
+![checkpoint-eg.png](../assets/Konkuk_3-1/Database/Post_19/checkpoint-eg.png)
+
+- T<sub>1</sub>은 checkpoint전에 commit 되었다 -> **무시해**
+- T<sub>2</sub>, T<sub>3</sub>는 system failure 전에 commit 성공 -> **redo**
+- T<sub>4</sub>은 commit 되지 못하고 system failure 발생 -> **undone**
