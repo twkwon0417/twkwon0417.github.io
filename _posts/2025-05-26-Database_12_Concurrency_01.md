@@ -95,7 +95,7 @@ Two Phase Locking Protocol
 - Assures serializability
 - Conflict serializable schdule에 대한 필요조건은 아니야
 - Transaction이 final lock을 acquire 시점에 의해 serializability가 결정됨을 보여준다. 
-- Recoverability 보장 (Strict 2PL)
+- Recoverability 보장 (Strict 2PL, Rigorous 2PL: OK Basic 2PL은 보장 x)
 - **Deadlock free를 보장하는 건 아니야**
 
 ![2pl.jpeg](../assets/Konkuk_3-1/Database/Post_12/2pl.jpeg)
