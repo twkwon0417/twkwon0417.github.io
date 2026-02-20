@@ -51,7 +51,7 @@ Block이라는 단위가 필요한 이유
     - Block들이 완전히 독립적이여서, 하드웨어 성능(SM의 갯수)에 맞춰서 유연하게 분배될 수 있는 확장성을 가지게 됨
     - Block은 SM의 메모리를 할당 받기 위한 큼직한 덩어리이고, Warp은 실제로 명령어를 싱행하기 위해 하드웨어가 잘게 쪼갠 단위. 
 
-뭔가 이상한 nclusion
+뭔가 이상한 conclusion
 --
 
 ``` cuda
@@ -64,4 +64,4 @@ __global__ void addition(int* A, int* B, int* C, int totalElements) {
 }
 ```
 
-Grid는 CPU에서 kernel이 실행될때 생기기 때문에, workIndex는 무조건 0부터 시작함이 보장 된다. 
+Grid는 CPU에서 kernel이 실행될때 생기기 때문에, workIndex는 무조건 0부터 시작함이 보장 된다.  
