@@ -1,6 +1,6 @@
 ---
-title: CUDA.1 Introduction
-date: 2025-12-21 21:34:52 +9000
+title: CUDA Thread Hierarchy
+date: 2026-02-19 22:54:32 +9000
 categories: [HPE, CUDA]
 tags: [cuda, block, grid, sm]     # TAG names should always be lowercase
 ---
